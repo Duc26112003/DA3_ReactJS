@@ -6,7 +6,7 @@ import { getAllProduct, productByPrice } from "../../admin/products/FetchApi";
 import "./style.css";
 
 const apiURL = process.env.REACT_APP_API_URL;
-
+// hiển thị sản phẩm theo danh mục
 const CategoryList = () => {
   const history = useHistory();
   const { data } = useContext(HomeContext);
@@ -57,7 +57,7 @@ const CategoryList = () => {
     </div>
   );
 };
-
+// lọc sản phẩm theo giá 
 const FilterList = () => {
   const { data, dispatch } = useContext(HomeContext);
   const [range, setRange] = useState(0);
@@ -108,7 +108,7 @@ const FilterList = () => {
         <div className="flex justify-between items-center">
           <div className="flex flex-col space-y-2  w-2/3 lg:w-2/4">
             <label htmlFor="points" className="text-sm">
-              Price (between 0 and 10$):{" "}
+              Price (between 1000 and 3000$):{" "}
               <span className="font-semibold text-yellow-700">{range}.00$</span>{" "}
             </label>
             <input
@@ -116,8 +116,8 @@ const FilterList = () => {
               className="slider"
               type="range"
               id="points"
-              min="0"
-              max="1000"
+              min="1000"
+              max="3000"
               step="10"
               onChange={(e) => rangeHandle(e)}
             />
@@ -143,7 +143,7 @@ const FilterList = () => {
     </div>
   );
 };
-
+// tìm kiếm sản phẩm theo tên
 const Search = () => {
   const { data, dispatch } = useContext(HomeContext);
   const [search, setSearch] = useState("");
@@ -213,7 +213,7 @@ const Search = () => {
     </div>
   );
 };
-
+// gọi lại các hàm trên 
 const ProductCategoryDropdown = (props) => {
   return (
     <Fragment>

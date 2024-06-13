@@ -25,8 +25,8 @@ const ProductDetailsSection = (props) => {
   const [pImages, setPimages] = useState(null);
   const [count, setCount] = useState(0); // Slide change state
 
-  const [quantitiy, setQuantitiy] = useState(1); // Increse and decrese quantity state
-  const [, setAlertq] = useState(false); // Alert when quantity greater than stock
+  const [quantitiy, setQuantitiy] = useState(1); // Trạng thái tăng giảm số lượng
+  const [, setAlertq] = useState(false); // Cảnh báo khi số lượng lớn hơn số lượng tồn kho
 
   const [wList, setWlist] = useState(
     JSON.parse(localStorage.getItem("wishList"))
@@ -44,12 +44,13 @@ const ProductDetailsSection = (props) => {
       setTimeout(() => {
         if (responseData.Product) {
           layoutDispatch({
+            // Gửi hành động tới layoutDispatch để cập nhật chi tiết sản phẩm
             type: "singleProductDetail",
             payload: responseData.Product,
-          }); // Dispatch in layout context
+          }); // Gửi hành động tới layoutDispatch để cập nhật giỏ hàng
           setPimages(responseData.Product.pImages);
           dispatch({ type: "loading", payload: false });
-          layoutDispatch({ type: "inCart", payload: cartList() }); // This function change cart in cart state
+          layoutDispatch({ type: "inCart", payload: cartList() }); // Chức năng này thay đổi giỏ hàng ở trạng thái giỏ hàng
         }
         if (responseData.error) {
           console.log(responseData.error);
@@ -58,7 +59,7 @@ const ProductDetailsSection = (props) => {
     } catch (error) {
       console.log(error);
     }
-    fetchCartProduct(); // Updating cart total
+    fetchCartProduct(); //  Gọi hàm để cập nhật tổng số sản phẩm trong giỏ hàng
   };
 
   const fetchCartProduct = async () => {

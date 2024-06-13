@@ -7,7 +7,7 @@ import { cartListProduct } from "../partials/FetchApi";
 import { getBrainTreeToken, getPaymentProcess } from "./FetchApi";
 import { fetchData, fetchbrainTree, pay } from "./Action";
 
-import DropIn from "braintree-web-drop-in-react";
+import DropIn from "braintree-web-drop-in-react"; // dùng thư viện phương thức thanh toán 
 
 const apiURL = process.env.REACT_APP_API_URL;
 
@@ -52,6 +52,7 @@ export const CheckoutComponent = (props) => {
       </div>
     );
   }
+  // hiển thị đơn hàng thanh toán 
   return (
     <Fragment>
       <section className="mx-4 mt-20 md:mx-12 md:mt-32 lg:mt-24">
@@ -59,7 +60,7 @@ export const CheckoutComponent = (props) => {
         {/* Product List */}
         <div className="flex flex-col md:flex md:space-x-2 md:flex-row">
           <div className="md:w-1/2">
-            <CheckoutProducts products={data.cartProduct} />
+            <CheckoutProducts products={data.cartProduct} /> // lấy dữ liệu từ giỏ hàng 
           </div>
           <div className="w-full order-first md:order-last md:w-1/2">
             {state.clientToken !== null ? (
@@ -110,7 +111,7 @@ export const CheckoutComponent = (props) => {
                       type="number"
                       id="phone"
                       className="border px-4 py-2"
-                      placeholder="+880"
+                      placeholder="+84"
                     />
                   </div>
                   <DropIn
@@ -168,7 +169,7 @@ export const CheckoutComponent = (props) => {
 
 const CheckoutProducts = ({ products }) => {
   const history = useHistory();
-
+// hiển thị thông tin đơn hàng
   return (
     <Fragment>
       <div className="grid grid-cols-2 md:grid-cols-1">

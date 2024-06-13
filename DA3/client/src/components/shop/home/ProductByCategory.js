@@ -47,13 +47,13 @@ const Submenu = ({ category }) => {
 const AllProduct = ({ products }) => {
   const history = useHistory();
   const category =
-    products && products.length > 0 ? products[0].pCategory.cName : "";
+    products && products.length > 0 ? products[0].pCategory.cName : ""; // pCategory : id danh mục , cName: tên danh mục
   return (
     <Fragment>
       <Submenu category={category} />
       <section className="m-4 md:mx-8 md:my-4 grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
-        {products && products.length > 0 ? (
-          products.map((item, index) => {
+        {products && products.length > 0 ? (  // Kiểm tra nếu mảng products tồn tại và có phần tử
+          products.map((item, index) => { // sử dụng map lặp qua từng sản phẩm trong mảng
             return (
               <Fragment key={index}>
                 <div className="relative col-span-1 m-2">

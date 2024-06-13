@@ -1,10 +1,11 @@
+//  kiểm tra xem 
 export const isWish = (id, wList) => {
   if (wList !== null && wList.includes(id) === true) {
     return true;
   }
   return false;
 };
-
+//  lấy danh sách sản phẩm được yêu thích trong local
 export const isWishReq = (e, id, setWlist) => {
   let list = localStorage.getItem("wishList")
     ? JSON.parse(localStorage.getItem("wishList"))
@@ -21,7 +22,7 @@ export const isWishReq = (e, id, setWlist) => {
     setWlist(list);
   }
 };
-
+// loại bỏ danh sách các sản phẩm yêu thích trong local
 export const unWishReq = (e, id, setWlist) => {
   let list = localStorage.getItem("wishList")
     ? JSON.parse(localStorage.getItem("wishList"))

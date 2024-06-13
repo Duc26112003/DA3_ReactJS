@@ -19,6 +19,7 @@ const AllProduct = (props) => {
   const fetchData = async () => {
     setLoading(true);
     let responseData = await getAllProduct();
+    // console.log('API Response Data:', responseData[0].pName); 
     setTimeout(() => {
       if (responseData && responseData.Products) {
         dispatch({
