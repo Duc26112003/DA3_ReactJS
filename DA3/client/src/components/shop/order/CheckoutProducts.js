@@ -22,6 +22,7 @@ export const CheckoutComponent = (props) => {
     success: false,
     clientToken: null,
     instance: {},
+    
   });
 
   useEffect(() => {
@@ -60,7 +61,7 @@ export const CheckoutComponent = (props) => {
         {/* Product List */}
         <div className="flex flex-col md:flex md:space-x-2 md:flex-row">
           <div className="md:w-1/2">
-            <CheckoutProducts products={data.cartProduct} /> // lấy dữ liệu từ giỏ hàng 
+            <CheckoutProducts products={data.cartProduct} /> 
           </div>
           <div className="w-full order-first md:order-last md:w-1/2">
             {state.clientToken !== null ? (

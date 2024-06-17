@@ -5,6 +5,7 @@ import { productByCategory } from "../../admin/products/FetchApi";
 
 const apiURL = process.env.REACT_APP_API_URL;
 
+//submenu nằm bên dưới thẻ navbar
 const Submenu = ({ category }) => {
   const history = useHistory();
   return (

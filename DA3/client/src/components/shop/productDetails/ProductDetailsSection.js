@@ -143,7 +143,7 @@ const ProductDetailsSection = (props) => {
                   className="flex justify-center  w-12 h-12 text-gray-700 opacity-25 cursor-pointer hover:text-yellow-700 hover:opacity-100"
                   fill="none"
                   stroke="currentColor"
-                  viewBox="0 0 24 24"
+                  viewBox="0 0 24 24" 
                   xmlns="http://www.w3.org/2000/svg"
                 >
                   <path
@@ -220,11 +220,13 @@ const ProductDetailsSection = (props) => {
               {sProduct.pDescription}
             </div>
             <div className="my-4 md:my-6">
+              {/* kiểm tran sản phẩm trong kho  */}
               {+quantitiy === +sProduct.pQuantity ? (
                 <span className="text-xs text-red-500">Stock limited</span>
               ) : (
                 ""
               )}
+              {/* cảnh báo số lượng < số lượng tồn */}
               <div
                 className={`flex justify-between items-center px-4 py-2 border ${
                   +quantitiy === +sProduct.pQuantity && "border-red-500"
@@ -363,11 +365,11 @@ const ProductDetailsSection = (props) => {
                 )}
                 {/* Quantity Button End */}
               </div>
-              {/* Incart and out of stock button */}
-              {sProduct.pQuantity !== 0 ? (
+              {/* Nút nhập và hết hàng */}
+              {sProduct.pQuantity !== 0 ? ( // Kiểm tra nếu sản phẩm còn hàng
                 <Fragment>
                   {layoutData.inCart !== null &&
-                  layoutData.inCart.includes(sProduct._id) === true ? (
+                  layoutData.inCart.includes(sProduct._id) === true ? ( // nếu mà sản phẩm có trong giỏ hàng -> nút incart k thể ấn 
                     <div
                       style={{ background: "#303031" }}
                       className={`px-4 py-2 text-white text-center cursor-not-allowed uppercase opacity-75`}

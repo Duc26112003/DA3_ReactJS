@@ -1,5 +1,6 @@
 import { getAllOrder, deleteOrder } from "./FetchApi";
 
+// hiển thị các trạn thái của đơn hàng bên admin
 export const fetchData = async (dispatch) => {
   dispatch({ type: "loading", payload: true });
   let responseData = await getAllOrder();

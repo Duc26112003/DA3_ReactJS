@@ -1,3 +1,4 @@
+// tính tổng 
 export const subTotal = (id, price) => {
   let subTotalCost = 0;
   let carts = JSON.parse(localStorage.getItem("cart"));
@@ -19,7 +20,7 @@ export const quantity = (id) => {
   });
   return product;
 };
-
+// tổng tiền chi phí sau cùng
 export const totalCost = () => {
   let totalCost = 0;
   let carts = JSON.parse(localStorage.getItem("cart"));

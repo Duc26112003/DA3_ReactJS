@@ -1,7 +1,7 @@
 import React, { Fragment, useContext } from "react";
 import ProductCategoryDropdown from "./ProductCategoryDropdown";
 import { HomeContext } from "./index";
-
+// trang chủ 
 const ProductCategory = (props) => {
   const { data, dispatch } = useContext(HomeContext);
 

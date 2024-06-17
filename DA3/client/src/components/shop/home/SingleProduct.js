@@ -5,7 +5,7 @@ import { HomeContext } from "./index";
 import { isWishReq, unWishReq, isWish } from "./Mixins";
 
 const apiURL = process.env.REACT_APP_API_URL;
-
+// hiển thị sản phẩm đơn lẻ 
 const SingleProduct = (props) => {
   const { data, dispatch } = useContext(HomeContext);
   const { products } = data;

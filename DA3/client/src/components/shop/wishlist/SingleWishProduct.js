@@ -5,7 +5,7 @@ const apiURL = process.env.REACT_APP_API_URL;
 
 const Product = () => {
   const history = useHistory();
-  const [products, setProducts] = useState([]);
+  const [products, setProducts] = useState([]);  // Product sử dụng useEffect để gọi hàm fetchData ngay khi thành phần được gắn vào DOM.
   const [loading, setLoading] = useState(false);
 
   useEffect(() => {

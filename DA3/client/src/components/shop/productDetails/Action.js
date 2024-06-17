@@ -5,7 +5,7 @@ import { isAuthenticate } from "../auth/fetchApi";
 export const Alert = (color, text) => (
   <div className={`bg-${color}-200 px-4 py-2 my-2 rounded`}>{text}</div>
 );
-
+// yêu cầu người dùng đăng nhập trước khi đưa ra đánh giá 
 export const reviewSubmitHanlder = (fData, setFdata, fetchData) => {
   if (!fData.rating || !fData.review) {
     setFdata({ ...fData, error: "Rating and review must be required" });

@@ -1,6 +1,6 @@
 import React, { Fragment, useContext } from "react";
 import { LayoutContext } from "../layout";
-
+// thông báo đơn hàng thành công
 const OrderSuccessMessage = (props) => {
   const { data, dispatch } = useContext(LayoutContext);
   return (
